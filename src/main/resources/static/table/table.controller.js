@@ -9,11 +9,6 @@
 
         $scope.stores = [
             {
-                name: 'Nijiya Market',
-                price: '$$',
-                sales: 292,
-                rating: 4.0
-            }, {
                 name: 'Eat On Monday Truck',
                 price: '$',
                 sales: 119,

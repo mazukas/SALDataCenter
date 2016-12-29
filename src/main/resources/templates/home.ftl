@@ -65,8 +65,8 @@
         </div>
 
         <script src="./scripts/jquery/jquery-3.1.1.min.js"></script>
-        <script src="./scripts/angular/angular.min.js"></script>
-        <script src="./scripts/angular/angular-route/angular-route.min.js"></script>
+        <script src="./scripts/angular/angular.js"></script>
+        <script src="./scripts/angular/angular-route/angular-route.js"></script>
         <script src="./scripts/angular/angular-aria/angular-aria.min.js"></script>
         <script src="./scripts/angular/angular-animate/angular-animate.min.js"></script>
 
@@ -91,6 +91,12 @@
 
         <script src="./vendors/echarts.js"></script>         
         <script src="./vendors/ngecharts.js"></script>        
+
+
+		<script src="./files/files/files.module.js"></script>
+		<script src="./files/files/files.controller.js"></script>
+		<script src="./files/files/files.directive.js"></script>
+		<script src="./files/files/files.service.js"></script>
 
         <script src="./app.module.js"></script>
         <script src="./app/task/task.module.js"></script>

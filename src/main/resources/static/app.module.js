@@ -23,7 +23,8 @@
         'app.ui.form.validation',
         'app.page',
         'app.table',
-        'app.task'
+        'app.task',
+        'app.files'
     ]);
 
 })();

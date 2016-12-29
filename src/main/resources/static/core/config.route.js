@@ -7,6 +7,7 @@
 
             routes = [
                 'dashboard',
+                'files/processed', 'files/details',
                 'ui/typography', 'ui/buttons', 'ui/icons', 'ui/grids', 'ui/widgets', 'ui/components', 'ui/boxes', 'ui/timeline', 'ui/pricing-tables', 'ui/maps',
                 'table/static', 'table/dynamic', 'table/responsive',
                 'form/elements', 'form/layouts', 'form/validation', 'form/wizard',

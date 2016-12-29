@@ -1,0 +1,104 @@
+
+<div class="page page-table" data-ng-controller="filesCtrl">
+
+    <section class="panel panel-default table-dynamic">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-file"></span> File Details</strong></div>
+
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-sm-4 col-xs-6">
+                    <form>
+                        <input type="text"
+                               placeholder="Search..."
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+                <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <span>
+                        Showing {{filteredFiles.length}}/{{files.length}} entries
+                    </span>              
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th><div class="th">
+                        Data Source
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('dataSource') "
+                              data-ng-class="{active: row == 'dataSource'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-dataSource') "
+                              data-ng-class="{active: row == '-dataSource'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        File Size (KB)
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('fileSizeKb') "
+                              data-ng-class="{active: row == 'fileSizeKb'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-fileSizeKb') "
+                              data-ng-class="{active: row == '-fileSizeKb'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Event Count
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('totalCount') "
+                              data-ng-class="{active: row == 'totalCount'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-totalCount') "
+                              data-ng-class="{active: row == '-totalCount'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Uploaded On
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('uploaded') "
+                              data-ng-class="{active: row == 'uploaded'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-uploaded') "
+                              data-ng-class="{active: row == '-uploaded'}"></span>
+                    </div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="store in currentPageFiles">
+                    <td>{{store.dataSource}}</td>
+                    <td>{{store.fileSizeKb}}</td>
+                    <td>{{store.totalCount}}</td>
+                    <td>{{store.uploaded}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+                    <span>
+                        Show 
+                        <select data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()">
+                        </select> 
+                        entries per page
+                    </span>
+                </div>
+                <div class="col-md-6 text-right pagination-container">
+                    <uib-pagination class="pagination-sm"
+                                ng-model="currentPage"
+                                total-items="filteredFiles.length"
+                                max-size="4"
+                                ng-change="select(currentPage)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                previous-text="&lsaquo;" next-text="&rsaquo;"
+                                boundary-links="true"></uib-pagination>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</div>
