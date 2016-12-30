@@ -15,6 +15,9 @@
         'duScroll',
 
         // Custom modules
+        'app.dashboard',
+        'app.files',
+        'app.datasources',
         'app.nav',
         'app.i18n',
         'app.chart',
@@ -23,8 +26,7 @@
         'app.ui.form.validation',
         'app.page',
         'app.table',
-        'app.task',
-        'app.files'
+        'app.task'
     ]);
 
 })();

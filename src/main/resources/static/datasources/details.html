@@ -1,0 +1,104 @@
+
+<div class="page page-table" data-ng-controller="datasourcesCtrl">
+
+    <section class="panel panel-default table-dynamic">
+        <div class="panel-heading"><strong><span class="ti-server"></span> Data Sources Details</strong></div>
+
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-sm-4 col-xs-6">
+                    <form>
+                        <input type="text"
+                               placeholder="Search..."
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+                <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <span>
+                        Showing {{filteredDatasources.length}}/{{datasources.length}} entries
+                    </span>              
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th><div class="th">
+                        Name
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('name') "
+                              data-ng-class="{active: row == 'name'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-name') "
+                              data-ng-class="{active: row == '-name'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Environment
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('env') "
+                              data-ng-class="{active: row == 'env'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-env') "
+                              data-ng-class="{active: row == '-env'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        First Seen
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('firstLoad') "
+                              data-ng-class="{active: row == 'firstLoad'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-firstLoad') "
+                              data-ng-class="{active: row == '-firstLoad'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Last Seen
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('lastLoad') "
+                              data-ng-class="{active: row == 'lastLoad'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-lastLoad') "
+                              data-ng-class="{active: row == '-lastLoad'}"></span>
+                    </div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="ds in currentPageDatasources">
+                    <td>{{ds.name}}</td>
+                    <td>{{ds.env}}</td>
+                    <td>{{ds.firstLoad | date:'medium'}}</td>
+                    <td>{{ds.lastLoad | date:'medium'}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+                    <span>
+                        Show 
+                        <select data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()">
+                        </select> 
+                        entries per page
+                    </span>
+                </div>
+                <div class="col-md-6 text-right pagination-container">
+                    <uib-pagination class="pagination-sm"
+                                ng-model="currentPage"
+                                total-items="filteredDatasources.length"
+                                max-size="4"
+                                ng-change="select(currentPage)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                previous-text="&lsaquo;" next-text="&rsaquo;"
+                                boundary-links="true"></uib-pagination>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</div>

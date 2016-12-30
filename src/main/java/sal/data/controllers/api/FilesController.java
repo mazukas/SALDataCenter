@@ -22,4 +22,9 @@ public class FilesController extends BaseApiController {
     	return Lists.newArrayList(salDataFileDao.findAll());
     }
     
+    @RequestMapping("/files/today")
+    public List<SalDataFile> today() {
+    	return Lists.newArrayList(salDataFileDao.filesProcessedToday());
+    }
+    
 }

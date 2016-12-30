@@ -93,12 +93,16 @@
         <script src="./vendors/ngecharts.js"></script>        
 
 
-		<script src="./files/files/files.module.js"></script>
-		<script src="./files/files/files.controller.js"></script>
-		<script src="./files/files/files.directive.js"></script>
-		<script src="./files/files/files.service.js"></script>
+		<script src="./files/scripts/files.module.js"></script>
+		<script src="./files/scripts/files.controller.js"></script>
+		<script src="./files/scripts/files.directive.js"></script>
+
+		<script src="./datasources/scripts/datasources.module.js"></script>
+		<script src="./datasources/scripts/datasources.controller.js"></script>
+		<script src="./datasources/scripts/datasources.directive.js"></script>
 
         <script src="./app.module.js"></script>
+        <script src="./dashboard/scripts/dashboard.module.js"></script>
         <script src="./app/task/task.module.js"></script>
         <script src="./chart/chart.module.js"></script>
         <script src="./form/form.module.js"></script>
@@ -114,7 +118,8 @@
         <script src="./core/app.controller.js"></script>
         <script src="./core/config.route.js"></script>
         <script src="./core/i18n.js"></script>
-        <script src="./dashboard/dashboard.controller.js"></script>
+        <script src="./dashboard/scripts/dashboard.controller.js"></script>
+        <script src="./dashboard/scripts/dashboard.directive.js"></script>
         <script src="./form/form.controller.js"></script>
         <script src="./form/form.directive.js"></script>
         <script src="./form/formValidation.controller.js"></script>
@@ -126,5 +131,9 @@
         <script src="./ui/ui.directive.js"></script>
         <script src="./ui/ui.service.js"></script>
         
+        
+        <script src="./services/events.services.js"></script>
+        <script src="./services/datasources.services.js"></script>
+        <script src="./services/files.services.js"></script>
     </body>
 </html>
