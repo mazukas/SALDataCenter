@@ -14,6 +14,15 @@
 				        'Content-Type' : 'application/json'
 				    }
 				});
+			},
+			getAllEventsByDataSourceAndEnv : function(dataSource, env) {
+				return $http({
+				    method : "GET",
+				    url : "/api/events/all/"+dataSource+"/"+env,
+				    headers : {
+				        'Content-Type' : 'application/json'
+				    }
+				});
 			}
 		}
 	}

@@ -83,6 +83,22 @@
         <script src="./scripts/angular/angular-translate/angular-translate.min.js"></script>
         <script src="./scripts/angular/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
+		
+		<script src="./scripts/fusioncharts-suite-xt/js/fusioncharts.charts.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/fusioncharts.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/fusioncharts.powercharts.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/fusioncharts.gantt.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/fusioncharts.treemap.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/fusioncharts.zoomscatter.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/fusioncharts.maps.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/fusioncharts.widgets.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/themes/fusioncharts.theme.carbon.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/themes/fusioncharts.theme.ocean.js"></script>
+		<script src="./scripts/fusioncharts-suite-xt/js/themes/fusioncharts.theme.zune.js"></script>
+		<script src="./scripts/angular/angular-fusion-charts/angular-fusioncharts.min.js"></script>
+		
+
         <script src="./scripts/angular/ng-tags-input/ng-tags-input.min.js"></script>
         <script src="./scripts/bootstrap/bootstrap-slider/bootstrap-slider.min.js"></script>
         <script src="./scripts/jquery/jquery-steps/jquery.steps.min.js"></script>
@@ -92,15 +108,26 @@
         <script src="./vendors/echarts.js"></script>         
         <script src="./vendors/ngecharts.js"></script>        
 
+		<script src="./layout/scripts/alerts.module.js"></script>
+		<script src="./layout/scripts/alerts.controller.js"></script>
+		<script src="./layout/scripts/alerts.directive.js"></script>
 
 		<script src="./files/scripts/files.module.js"></script>
 		<script src="./files/scripts/files.controller.js"></script>
 		<script src="./files/scripts/files.directive.js"></script>
 
+		<script src="./events/scripts/events.module.js"></script>
+		<script src="./events/scripts/events.controller.js"></script>
+		<script src="./events/scripts/events.directive.js"></script>
+		
 		<script src="./datasources/scripts/datasources.module.js"></script>
 		<script src="./datasources/scripts/datasources.controller.js"></script>
 		<script src="./datasources/scripts/datasources.directive.js"></script>
 
+		<script src="./pushToRelationalDB/scripts/pushToRelationalDB.module.js"></script>
+		<script src="./pushToRelationalDB/scripts/pushToRelationalDB.controller.js"></script>
+		<script src="./pushToRelationalDB/scripts/pushToRelationalDB.directive.js"></script>
+		
         <script src="./app.module.js"></script>
         <script src="./dashboard/scripts/dashboard.module.js"></script>
         <script src="./app/task/task.module.js"></script>
@@ -117,7 +144,6 @@
         <script src="./chart/echarts.controller.js"></script>
         <script src="./core/app.controller.js"></script>
         <script src="./core/config.route.js"></script>
-        <script src="./core/i18n.js"></script>
         <script src="./dashboard/scripts/dashboard.controller.js"></script>
         <script src="./dashboard/scripts/dashboard.directive.js"></script>
         <script src="./form/form.controller.js"></script>
@@ -135,5 +161,7 @@
         <script src="./services/events.services.js"></script>
         <script src="./services/datasources.services.js"></script>
         <script src="./services/files.services.js"></script>
+        <script src="./services/alerts.services.js"></script>
+        <script src="./services/pushToRelationalDB.services.js"></script>
     </body>
 </html>

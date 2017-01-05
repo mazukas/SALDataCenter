@@ -2,35 +2,39 @@ DROP SCHEMA IF EXISTS sal_data;
 CREATE SCHEMA IF NOT EXISTS sal_data;
 USE sal_data;
 
+
 CREATE TABLE IF NOT EXISTS data_sources (
-	data_source VARCHAR(128) NOT NULL,
+	name VARCHAR(128) NOT NULL,
 	env VARCHAR(8) NOT NULL,
-	first_load DATETIME NOT NULL DEFAULT NOW(),
-	last_load DATETIME NOT NULL,
-	PRIMARY KEY (data_source, env),
-	INDEX USING BTREE (data_source, env)
+	first_seen DATETIME NOT NULL DEFAULT NOW(),
+	last_seen DATETIME NOT NULL, 
+	PRIMARY KEY (name, env),
+	INDEX USING BTREE (name, env)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 CREATE TABLE IF NOT EXISTS data_source_data_flow_tracker (
 	data_source VARCHAR(128) NOT NULL,
 	env VARCHAR(8) NOT NULL,
-	last_load DATETIME DEFAULT NOW(),
+	last_seen DATETIME DEFAULT NOW(),
 	load_date DATE NOT NULL,
 	event_count MEDIUMINT NOT NUll,
 	PRIMARY KEY (data_source, env),
 	INDEX USING BTREE (data_source, env)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 CREATE TABLE IF NOT EXISTS data_source_daily_events (
 	data_source VARCHAR(128) NOT NULL,
 	env VARCHAR(8) NOT NULL,
 	event_type VARCHAR(8) NOT NULL,
 	time_frame DATE NOT NULL,
-	last_load DATETIME NOT NULL,
+	last_seen DATETIME NOT NULL,
 	event_count MEDIUMINT NOT NUll,
 	PRIMARY KEY (data_source, env, event_type, time_frame),
 	INDEX USING BTREE (data_source, env, event_type)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 CREATE TABLE IF NOT EXISTS file_details (
 	file_name VARCHAR(512) NOT NULL,
@@ -50,3 +54,13 @@ CREATE TABLE IF NOT EXISTS file_details (
 	PRIMARY KEY (catalog_tag),
 	INDEX USING BTREE (data_source, catalog_tag, uploaded, last_checked, accepted)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE IF NOT EXISTS alerts (
+     id MEDIUMINT NOT NULL AUTO_INCREMENT,
+     title VARCHAR(128) NOT NULL,
+     recorded DATETIME NOT NULL DEFAULT NOW(),
+     status VARCHAR (10) NOT NULL,
+     active TINYINT DEFAULT 1,
+     PRIMARY KEY (id)
+);

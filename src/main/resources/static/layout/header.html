@@ -30,6 +30,35 @@
                              class="toggle-min"
                              ><i class="ti-menu"></i></a>
             </li>
+            <li class="dropdown" uib-dropdown is-open="status.isopenBell" data-ng-controller="alertsCtrl">
+                <a href="javascript:;" class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown">
+                    <i class="ti-bell"></i>
+                    <span class="badge badge-info">{{alerts.length}}</span>
+                </a>
+                <div class="dropdown-menu with-arrow panel panel-default dropdown-menu-scaleIn">
+                    <div class="panel-heading">
+                        You have {{alerts.length}} notifications.
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item" data-ng-repeat="alert in alerts">
+                            <a href="javascript:;" class="media">
+                                <span class="media-left media-icon">
+                                    <span class="btn-icon btn-icon-round btn-success" ng-if="alert.status == 'ADDED'"><i class="glyphicon glyphicon-plus"></i></span>
+                                    <span class="btn-icon btn-icon-round btn-success" ng-if="alert.status == 'REVIEW'"><i class="glyphicon glyphicon-eye-open"></i></span>
+                                    <span class="btn-icon btn-icon-round btn-warning" ng-if="alert.status == 'MISSING'"><i class="glyphicon glyphicon-warning-sign"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">{{alert.title}}</span>
+                                    <span class="text-muted block">{{alert.recorded | date:'medium'}}</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="panel-footer">
+                        <a href="#/alerts/all">Show all alerts.</a>
+                    </div>
+                </div>
+            </li>
             <li class="dropdown hidden-xs" uib-dropdown is-open="status.isopenSettings">
                 <a href="javascript:;" class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown"><i class="ti-settings"></i></a>
                 <div class="dropdown-menu with-arrow panel panel-default admin-options dropdown-menu-scaleIn" ui-not-close-on-click>
@@ -62,6 +91,7 @@
                     </ul>
                 </div>
             </li>
+            <!-- 
             <li class="dropdown hidden-xs" uib-dropdown is-open="status.isopenPalette">
                 <a href="javascript:;" class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown"><i class="ti-paint-bucket"></i></a>
                 <div class="dropdown-menu with-arrow panel panel-default skin-options dropdown-menu-scaleIn" ui-not-close-on-click>
@@ -240,116 +270,17 @@
                         </div>
                     </div>
                 </div>
-
             </li>
+             -->
             <li class="search-box visible-md visible-lg">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="ti-search"></i></span>
                     <input type="text" class="form-control" placeholder="Search...">
                 </div>
             </li>
-            <li class="dropdown" uib-dropdown is-open="status.isopenEmail">
-                <a href="javascript:;" class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown">
-                    <i class="ti-email"></i>
-                    <span class="badge badge-danger">3</span>
-                </a>
-                <div class="dropdown-menu with-arrow panel panel-default dropdown-menu-scaleIn">
-                    <div class="panel-heading">
-                        You have 3 mails.
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="javascript:;" class="media">
-                                <span class="media-left media-icon">
-                                    <span class="btn-icon btn-icon-round btn-warning"><i class="ti-email"></i></span>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Lisa sent you a mail</span>
-                                    <span class="text-muted block">2min ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:;" class="media">
-                                <span class="media-left media-icon">
-                                    <span class="btn-icon btn-icon-round btn-info"><i class="ti-email"></i></span>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Jane sent you a mail</span>
-                                    <span class="text-muted">3 hours ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:;" class="media">
-                                <span class="media-left media-icon">
-                                    <span class="btn-icon btn-icon-round btn-success"><i class="ti-email"></i></span>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Lynda sent you a mail</span>
-                                    <span class="text-muted">9 hours ago</span>
-                                </div>
-                            </a>
-                        </li>                       
-                    </ul>
-                    <div class="panel-footer">
-                        <a href="#/mail/inbox">Show all mails.</a>
-                    </div>
-                </div>
-            </li>
-            <li class="dropdown" uib-dropdown is-open="status.isopenBell">
-                <a href="javascript:;" class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown">
-                    <i class="ti-bell"></i>
-                    <span class="badge badge-info">3</span>
-                </a>
-                <div class="dropdown-menu with-arrow panel panel-default dropdown-menu-scaleIn">
-                    <div class="panel-heading">
-                        You have 3 notifications.
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="javascript:;" class="media">
-                                <span class="media-left media-icon">
-                                    <span class="btn-icon btn-icon-round btn-success"><i class="ti-bell"></i></span>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">New tasks needs to be done</span>
-                                    <span class="text-muted block">2min ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:;" class="media">
-                                <span class="media-left media-icon">
-                                    <span class="btn-icon btn-icon-round btn-info"><i class="ti-bell"></i></span>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Change your password</span>
-                                    <span class="text-muted">3 hours ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:;" class="media">
-                                <span class="media-left media-icon">
-                                    <span class="btn-icon btn-icon-round btn-danger"><i class="ti-bell"></i></span>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">New feature added</span>
-                                    <span class="text-muted">9 hours ago</span>
-                                </div>
-                            </a>
-                        </li>                       
-                    </ul>
-                    <div class="panel-footer">
-                        <a href="#/mail/inbox">Show all notifications.</a>
-                    </div>
-                </div>
-            </li>
         </ul> 
 
         <ul class="nav-right pull-right list-unstyled">
-
             <li class="dropdown text-normal nav-profile" uib-dropdown is-open="status.isopenProfile">
                 <a href="javascript:;" class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown">
                     <img src="images/g1.jpg" alt="" class="img-circle img30_30">
@@ -382,25 +313,6 @@
                             <span data-translate="LOG_OUT"></span>
                         </a>
                     </li>
-                </ul>
-            </li>
-            <li class="dropdown langs text-normal" uib-dropdown is-open="status.isopenLang" data-ng-controller="LangCtrl">
-                <a href="javascript:;" class="dropdown-toggle  dropdown-toggleactive-flag" uib-dropdown-toggle data-toggle="dropdown">
-                    <div class="flag {{ getFlag() }}"></div>
-                </a>
-                <ul class="dropdown-menu with-arrow  pull-right list-langs dropdown-menu-scaleIn" role="menu">
-                    <li data-ng-show="lang !== 'English' ">
-                        <a href="javascript:;" data-ng-click="setLang('English')"><div class="flag flags-american"></div> English</a></li>
-                    <li data-ng-show="lang !== 'Español' ">
-                        <a href="javascript:;" data-ng-click="setLang('Español')"><div class="flag flags-spain"></div> Español</a></li>
-                    <li data-ng-show="lang !== 'Portugal' ">
-                        <a href="javascript:;" data-ng-click="setLang('Portugal')"><div class="flag flags-portugal"></div> Portugal</a></li>
-                    <li data-ng-show="lang !== '中文' ">
-                        <a href="javascript:;" data-ng-click="setLang('中文')"><div class="flag flags-china"></div> 中文</a></li>
-                    <li data-ng-show="lang !== '日本語' ">
-                        <a href="javascript:;" data-ng-click="setLang('日本語')"><div class="flag flags-japan"></div> 日本語</a></li>
-                    <li data-ng-show="lang !== 'Русский язык' ">
-                        <a href="javascript:;" data-ng-click="setLang('Русский язык')"><div class="flag flags-russia"></div> Русский язык</a></li>
                 </ul>
             </li>
         </ul>

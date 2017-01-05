@@ -6,6 +6,7 @@
         'ngRoute',
         'ngAnimate',
         'ngAria',
+        'ng-fusioncharts',
 
         // 3rd Party Modules
         'ui.bootstrap',
@@ -15,11 +16,13 @@
         'duScroll',
 
         // Custom modules
+        'app.alerts',
         'app.dashboard',
         'app.files',
         'app.datasources',
+        'app.events',
+        'app.pushToRelationalDB',
         'app.nav',
-        'app.i18n',
         'app.chart',
         'app.ui',
         'app.ui.form',

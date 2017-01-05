@@ -10,7 +10,7 @@ public interface DataSourcesDao extends CrudRepository<DataSource, Long> {
 	
 	public Iterable<DataSource> findAllByOrderByNameAsc();
 	
-	@Query("from DataSource ds WHERE DATE(first_load) = CURDATE() GROUP BY ds.name")
+	@Query("from DataSource ds WHERE DATE(first_seen) = CURDATE() GROUP BY ds.name")
 	public Iterable<DataSource> getAllNewDataSources();
 
 }

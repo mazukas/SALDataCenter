@@ -9,6 +9,8 @@
                 'dashboard',
                 'files/processed', 'files/details',
                 'datasources/details',
+                'events/details',
+                'pushToRelationalDB/details', 'pushToRelationalDB/oneTimePush', 'pushToRelationalDB/continuesFeed',
                 'ui/typography', 'ui/buttons', 'ui/icons', 'ui/grids', 'ui/widgets', 'ui/components', 'ui/boxes', 'ui/timeline', 'ui/pricing-tables', 'ui/maps',
                 'table/static', 'table/dynamic', 'table/responsive',
                 'form/elements', 'form/layouts', 'form/validation', 'form/wizard',

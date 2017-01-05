@@ -1,0 +1,28 @@
+<div class="page page-table" data-ng-controller="pushToRelationalDBCtrl">
+
+	<section class="panel panel-default table-dynamic">
+		<div class="panel-heading">
+			<strong><span class="glyphicon glyphicon-save"></span> One
+				Time Push to XXX</strong>
+		</div>
+		<div class="panel-body">
+			<div class="vertical" data-ui-wizard-form>
+				<h1>Select Data Source & Environment</h1>
+				<div>
+					<label for="inputEmail3" class="col-sm-2 control-label">Data Source</label>
+					<span class="ui-select">
+						<select ng-model="oneTimePushDetails.dsAndEnv" ng-options="opt for opt in allDatasources"></select>
+	
+					</span>
+				</div>
+
+				<h1>Select Event Type(s)</h1>
+				<div>Second Content</div>
+
+				<h1>Select Schema</h1>
+				<div>Third Content</div>
+			</div>
+
+		</div>
+	</section>
+</div>

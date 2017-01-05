@@ -6,36 +6,39 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "data_source_daily_events")
+@IdClass(SalDailyEventsPK.class)
 public class SalDailyEvents implements Serializable {
-	
-	//@TODO - CREATE COMPOSITE ID
 	
 	@Id
 	@NotNull
 	@Column(name="data_source")
 	private String dataSource;
 	
+	@Id
 	@NotNull
 	@Column(name="env")
 	private String env;
 	
+	@Id
 	@NotNull
 	@Column(name="event_type")
 	private String eventType;
 
+	@Id
 	@NotNull
 	@Column(name="time_frame")
 	private Date timeFrame;
 	
 	@NotNull
-	@Column(name="last_load")
-	private Date lastLoad;
+	@Column(name="last_seen")
+	private Date lastSeen;
 	
 	@NotNull
 	@Column(name="event_count")
@@ -73,12 +76,12 @@ public class SalDailyEvents implements Serializable {
 		this.timeFrame = timeFrame;
 	}
 
-	public Date getLastLoad() {
-		return lastLoad;
+	public Date getLastSeen() {
+		return lastSeen;
 	}
 
-	public void setLastLoad(Date lastLoad) {
-		this.lastLoad = lastLoad;
+	public void setLastSeen(Date lastSeen) {
+		this.lastSeen = lastSeen;
 	}
 
 	public long getEventCount() {

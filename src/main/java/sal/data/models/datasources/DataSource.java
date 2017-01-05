@@ -18,7 +18,7 @@ public class DataSource implements Serializable {
 	
 	@Id
 	@NotNull
-	@Column(name="data_source")
+	@Column(name="name")
 	private String name;
 	
 	@Id
@@ -27,11 +27,11 @@ public class DataSource implements Serializable {
 	private String env;
 	
 	@NotNull
-	@Column(name="first_load")
+	@Column(name="first_seen")
 	private Date firstLoad;
 
 	@NotNull
-	@Column(name="last_load")
+	@Column(name="last_seen")
 	private Date lastLoad;
 	
 	public DataSource() {
