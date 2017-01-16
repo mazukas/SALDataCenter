@@ -13,17 +13,6 @@ CREATE TABLE IF NOT EXISTS data_sources (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE IF NOT EXISTS data_source_data_flow_tracker (
-	data_source VARCHAR(128) NOT NULL,
-	env VARCHAR(8) NOT NULL,
-	last_seen DATETIME DEFAULT NOW(),
-	load_date DATE NOT NULL,
-	event_count MEDIUMINT NOT NUll,
-	PRIMARY KEY (data_source, env),
-	INDEX USING BTREE (data_source, env)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
 CREATE TABLE IF NOT EXISTS data_source_daily_events (
 	data_source VARCHAR(128) NOT NULL,
 	env VARCHAR(8) NOT NULL,

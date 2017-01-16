@@ -14,11 +14,13 @@
         'textAngular',
         'angular-loading-bar',
         'duScroll',
+        'ui.codemirror', 
 
         // Custom modules
         'app.alerts',
         'app.dashboard',
         'app.files',
+        'app.search',
         'app.datasources',
         'app.events',
         'app.pushToRelationalDB',

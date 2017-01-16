@@ -7,7 +7,20 @@
         $scope.todayEventCount = 0;
         $scope.todayFilesCount = 0;
         $scope.todayNewDataSources = 0;
+        
+        $scope.todaysEventsPie = {};
+        
     	var init = function() {
+    		
+        	var promiseEvents = eventsServices.getTodayEventCountsChartPie();
+        	promiseEvents.then(function(answer) {
+        		$scope.todaysEventsPie = answer.data;
+    		}, function(error) {
+    			// report something
+    		}, function(progress) {
+    			// report progress
+    		});
+    		
         	var promiseEvents = eventsServices.getTodayEventCount();
         	promiseEvents.then(function(answer) {
         		var total = 0;

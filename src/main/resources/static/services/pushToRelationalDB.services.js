@@ -6,17 +6,16 @@
 	function pushToRelationalDBServices($http) {
 
 		return {
-			/*
-			get : function() {
+			oneTimePush : function(form) {
 				return $http({
-				    method : "GET",
-				    url : "/api/alerts",
+				    method : "POST",
+				    url : "/api/pushToXXX/oneTime",
 				    headers : {
 				        'Content-Type' : 'application/json'
-				    }
+				    },
+				    data: form
 				});
 			}
-			*/
 		}
 	}
 })();

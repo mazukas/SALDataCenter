@@ -16,6 +16,10 @@
             <link rel="stylesheet" href="./styles/bootstrap.css">
             <link rel="stylesheet" href="./styles/ui.css">
             <link rel="stylesheet" href="./styles/main.css">
+            <link rel="stylesheet" href="./styles/sal.css">
+            
+            <link rel="stylesheet" href="./styles/codemirror/codemirror.css">
+            <link rel="stylesheet" href="./styles/codemirror/show-hint.css">
 
     </head>
     <body data-ng-app="app"
@@ -113,19 +117,27 @@
 		<script src="./layout/scripts/alerts.directive.js"></script>
 
 		<script src="./files/scripts/files.module.js"></script>
-		<script src="./files/scripts/files.controller.js"></script>
+		<script src="./files/scripts/timeline.controller.js"></script>
+		<script src="./files/scripts/details.controller.js"></script>
 		<script src="./files/scripts/files.directive.js"></script>
+		
+		<script src="./search/scripts/search.module.js"></script>
+		<script src="./search/scripts/search.controller.js"></script>
+		<script src="./search/scripts/savedSearches.controller.js"></script>
+		<script src="./search/scripts/search.directive.js"></script>
 
 		<script src="./events/scripts/events.module.js"></script>
-		<script src="./events/scripts/events.controller.js"></script>
 		<script src="./events/scripts/events.directive.js"></script>
+		<script src="./events/scripts/events.by.env.controller.js"></script>
+		<script src="./events/scripts/events.by.ds.controller.js"></script>
 		
 		<script src="./datasources/scripts/datasources.module.js"></script>
 		<script src="./datasources/scripts/datasources.controller.js"></script>
 		<script src="./datasources/scripts/datasources.directive.js"></script>
 
 		<script src="./pushToRelationalDB/scripts/pushToRelationalDB.module.js"></script>
-		<script src="./pushToRelationalDB/scripts/pushToRelationalDB.controller.js"></script>
+		<script src="./pushToRelationalDB/scripts/pushToRelationalDBoneTime.controller.js"></script>
+		<script src="./pushToRelationalDB/scripts/pushToRelationalDBcontinuous.controller.js"></script>
 		<script src="./pushToRelationalDB/scripts/pushToRelationalDB.directive.js"></script>
 		
         <script src="./app.module.js"></script>
@@ -157,11 +169,18 @@
         <script src="./ui/ui.directive.js"></script>
         <script src="./ui/ui.service.js"></script>
         
-        
+        <script src="./services/search.services.js"></script>
         <script src="./services/events.services.js"></script>
         <script src="./services/datasources.services.js"></script>
         <script src="./services/files.services.js"></script>
         <script src="./services/alerts.services.js"></script>
         <script src="./services/pushToRelationalDB.services.js"></script>
+        
+		<script src="./scripts/codemirror/codemirror.js"></script>
+        <script src="./scripts/codemirror/sql.js"></script>
+        <script src="./scripts/codemirror/matchbrackets.js"></script>
+		<script src="./scripts/codemirror/show-hint.js"></script>
+		<script src="./scripts/codemirror/sql-hint.js"></script>
+		<script src="./scripts/codemirror/ui-codemirror.js"></script>
     </body>
 </html>

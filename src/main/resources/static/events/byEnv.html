@@ -1,0 +1,82 @@
+
+<div class="page page-table" data-ng-controller="byEnvEventsCtrl">
+
+	<section class="panel panel-default table-dynamic">
+		<div class="panel-heading">
+			<strong><span class="ti-receipt"></span> Events by Environment</strong>
+		</div>
+
+		<table>
+			<tr>
+				<td>
+					From: 
+				</td>
+				<td>
+                    <div class="input-group ui-datepicker">
+                        <input type="text" 
+                               class="form-control"
+                               uib-datepicker-popup="yyyy-MM-dd"
+                               ng-model="fromDate"
+                               is-open="fromDate.opened"
+                               min-date="minDate"
+                               max-date="maxDate"
+                               datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)"
+                               ng-required="true"
+                               close-text="Close"
+                               alt-input-formats="altInputFormats" />
+                        <span class="input-group-addon" ng-click="fromDateOpen()"><i class="ti-calendar"></i></span>
+                    </div>
+				</td>
+				<td>
+					To: 
+				</td>
+				<td>
+                    <div class="input-group ui-datepicker">
+                        <input type="text" 
+                               class="form-control"
+                               uib-datepicker-popup="yyyy-MM-dd"
+                               ng-model="toDate"
+                               is-open="toDate.opened"
+                               min-date="minDate"
+                               max-date="maxDate"
+                               datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)"
+                               ng-required="true"
+                               close-text="Close"
+                               alt-input-formats="altInputFormats" />
+                        <span class="input-group-addon" ng-click="toDateOpen()"><i class="ti-calendar"></i></span>
+                    </div>
+				</td>
+				<td>
+					<button type="button" class="btn btn-w-md btn-gap-v btn-primary" ng-click="loadGraphs()">Generate Graphs</button>
+				</td>
+			</tr>
+		</table>
+		
+		
+		<span>
+
+		</span>
+
+		<table>
+			<tr>
+				<td width="50%">
+					<div	fusioncharts 
+							width="575" 
+							height="400" 
+							type="pie3d"
+							dataSource="{{envPie}}"></div>				
+				</td>
+				<td width="50%">
+					<div	fusioncharts 
+							width="575" 
+							height="400" 
+							type="zoomline"
+							dataSource="{{envZoom}}"></div>				
+				</td>
+			</tr>
+		</table>
+	</section>
+
+</div>

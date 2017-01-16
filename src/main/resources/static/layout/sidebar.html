@@ -5,12 +5,12 @@
         data-slim-scroll
         data-collapse-nav
         data-highlight-active>
-        <li><a href="#/dashboard"> <i class="ti-home"></i><span>Dashboard</span> </a></li>
+        <li><a href="#/dashboard"> <i class="ti-home"></i><span>Today</span> </a></li>
         <li>
             <a href="#!/files"><i class="ti-file"></i><span>Files</span></a>
             <ul>
-                <li><a href="#!/files/processed"><i class="ti-angle-right"></i><span>Processed</span></a></li>
-                <li><a href="#!/files/details"><i class="ti-angle-right"></i><span>Details</span></a></li>
+            	<li><a href="#!/files/details"><i class="ti-angle-right"></i><span>Details</span></a></li>
+                <li><a href="#!/files/timeline"><i class="ti-angle-right"></i><span>Timeline</span></a></li>
             </ul>
         </li>
         <li>
@@ -22,17 +22,31 @@
         <li>
             <a href="#!/events"><i class="ti-receipt"></i><span>Events</span></a>
             <ul>
-                <li><a href="#!/events/details"><i class="ti-angle-right"></i><span>Details</span></a></li>
+                <li><a href="#!/events/byEnv"><i class="ti-angle-right"></i><span>By Environment</span></a></li>
+            </ul>
+            <ul>
+                <li><a href="#!/events/byDataSource"><i class="ti-angle-right"></i><span>By Data Source</span></a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#!/search"><i class="ti-search"></i><span>Search</span></a>
+            <ul>
+                <li><a href="#!/search/search"><i class="ti-angle-right"></i><span>Search Data Lake</span></a></li>
+            </ul>
+            <ul>
+                <li><a href="#!/search/savedSearches"><i class="ti-angle-right"></i><span>Saved Searches</span></a></li>
             </ul>
         </li>
         <li>
             <a href="#!/pushToRelationalDB"><i class="glyphicon glyphicon-save"></i><span>Push to XXX</span></a>
             <ul>
-                <li><a href="#!/pushToRelationalDB/details"><i class="ti-angle-right"></i><span>Details</span></a></li>
-                <li><a href="#!/pushToRelationalDB/oneTimePush"><i class="ti-angle-right"></i><span>One Time</span></a></li>
-                <li><a href="#!/pushToRelationalDB/continuesFeed"><i class="ti-angle-right"></i><span>Continues</span></a></li>
+                <li><a href="#!/pushToRelationalDB/oneTimePush"><i class="ti-angle-right"></i><span>One Time Load</span></a></li>
+                <li><a href="#!/pushToRelationalDB/oneTimePushDetails"><i class="ti-angle-right"></i><span>One Time Load Details</span></a></li>
+                <li><a href="#!/pushToRelationalDB/continuousFeed"><i class="ti-angle-right"></i><span>Continuous Feed</span></a></li>
+                <li><a href="#!/pushToRelationalDB/continuousFeedDetails"><i class="ti-angle-right"></i><span>Continuous Feed Details</span></a></li>
             </ul>
         </li>
+        <!-- 
         <li>
             <a href="#!/ui"><i class="ti-wand"></i><span data-translate="UI_KIT"></span></a>
             <ul>
@@ -94,5 +108,6 @@
                 <i class="ti-check-box"></i><span data-translate="TASKS"></span>
             </a>
         </li>
+         -->
     </ul>
 </div>

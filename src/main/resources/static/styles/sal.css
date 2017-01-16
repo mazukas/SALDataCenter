@@ -1,0 +1,39 @@
+.sal-layout-label {
+	text-align: right;
+	vertical-align: top;
+	font-weight: bold;
+	padding-right: 5px;
+	width: 25%;
+	padding-bottom: 10px;
+}
+
+.sal-layout-element {
+	text-align: left;
+	vertical-align: top;
+	font-weight: bold;
+	width: 25%;
+	padding-bottom: 10px;
+}
+
+
+.sal-workflow-step {
+	border-radius: 25px;
+	padding: 10px;
+	margin: 10px;
+	height: 50px;
+	font-weight: bolder;
+	background: #eee none repeat scroll 0 0;
+    color: gray;
+    cursor: default;
+}
+
+.sal-workflow-step-selected {
+	border-radius: 25px;
+	padding: 10px;
+	margin: 10px;
+	height: 50px;
+	font-weight: bolder;
+	background: #5b90bf none repeat scroll 0 0; 
+	color: #fff;
+	cursor: default;
+}

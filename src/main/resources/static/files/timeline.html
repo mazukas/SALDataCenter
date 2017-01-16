@@ -1,0 +1,26 @@
+<div class="page" data-ng-controller="filesTimelineCtrl">
+    
+    <div class="ui-timline-container">
+        <section class="ui-timeline">
+
+            <article ng-class="f.flip ? 'tl-item' : 'tl-item alt'" data-ng-repeat="f in files">
+                <div class="tl-body">
+                    <div class="tl-entry">
+                        <div class="tl-time">Event Count: {{f.totalCount | number}}</div>
+                        <div class="tl-icon btn-icon-round btn-icon btn-icon-thin btn-info"><i class="ti-file"></i></div>
+                        <div class="tl-content">
+                            <h4 class="tl-tile text-primary">{{f.dataSource}}</h4>
+                            Errors: {{f.errorCount | number}}<br />
+                            File Size: {{f.fileSizeKb | number}} KB<br />
+                            Processed: {{f.accepted}}<br />
+                            Uploaded: {{f.uploaded | date:'medium'}}<br />
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </div>
+
+</div>
